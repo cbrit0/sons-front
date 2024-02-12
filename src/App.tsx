@@ -22,7 +22,7 @@ function App () {
 
   return (
     <div>
-      <h1>Web Scraper</h1>
+      <h1>Real OG Web Scraper</h1>
       <p>{scrapedData}</p>
     </div>
   );
