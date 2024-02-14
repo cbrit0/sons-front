@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function App () {
+function MyButton({ title }: { title: string }) {
+  return (
+    <button>{title}</button>
+  );
+}
 
+function App() {
   const [scrapedData, setScrapedData] = useState('');
 
   const fetchHelloWorld = async () => {
@@ -11,7 +16,6 @@ function App () {
       const response = await axios.get('http://localhost:5000/');
       setScrapedData(response.data.message);
     } catch (error: any) {
-      // eslint-disable-next-line no-console
       console.error('Error fetching initial message:', error.message);
     }
   };
@@ -24,9 +28,9 @@ function App () {
     <div>
       <h1>Real OG Web Scraper</h1>
       <p>{scrapedData}</p>
+      <MyButton title="Clickea acá" />
     </div>
   );
 }
 
 export default App;
-
